@@ -1,7 +1,7 @@
 window.addEventListener('load',initialExecution);
 
 var data=[];
-var url="http://localhost:3000/items";
+var url="https://todo-mock.herokuapp.com/items";
 function initialExecution(){
     
     let xhr=new XMLHttpRequest();
@@ -96,7 +96,7 @@ function displayAddedTask(event){
 
 function completedTask(id){
     
-    let url=`http://localhost:3000/items/${id}`;
+    let url=`https://todo-mock.herokuapp.com/items/${id}`;
     let obj={
         "status":true
     };
@@ -128,7 +128,7 @@ function editTask(event){
         }
         let json=JSON.stringify(obj);
         
-        let url=`http://localhost:3000/items/${item.id}`;
+        let url=`https://todo-mock.herokuapp.com/items/${item.id}`;
         console.log(url)
         let xhr=new XMLHttpRequest();
         xhr.open('PATCH',url);
